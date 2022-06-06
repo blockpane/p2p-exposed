@@ -1,0 +1,57 @@
+---
+
+80: generic http
+1080: generic http
+3000: generic http
+8080: generic http
+8088: generic http
+8887: generic http
+8888: generic http
+8889: generic http
+
+443: tls http
+8443: tls http
+
+16656: tendermint p2p
+26656: tendermint p2p
+36656: tendermint p2p
+46656: tendermint p2p
+56656: tendermint p2p
+
+16657: tendermint rpc
+26657: tendermint rpc
+36657: tendermint rpc
+46657: tendermint rpc
+56657: tendermint rpc
+
+1317: cosmos rest
+2317: cosmos rest
+3317: cosmos rest
+4317: cosmos rest
+5317: cosmos rest
+10317: cosmos rest
+
+16660: cosmos prometheus
+26660: cosmos prometheus
+36660: cosmos prometheus
+46660: cosmos prometheus
+56660: cosmos prometheus
+
+6060: tendermint pprof
+
+9090: tendermint grpc
+19090: tendermint grpc
+29090: tendermint grpc
+39090: tendermint grpc
+49090: tendermint grpc
+59090: tendermint grpc
+
+9091: tendermint grpc web
+19091: tendermint grpc web
+29091: tendermint grpc web
+39091: tendermint grpc web
+49091: tendermint grpc web
+59091: tendermint grpc web
+
+9100: prometheus node exporter
+22: ssh

@@ -1,0 +1,14 @@
+---
+
+# TODO: actually implement this ...
+signatures:
+  - chain: cosmos
+    service: cosmos REST
+    location: code
+    key:
+    value: '501 Not Implemented'
+  - chain: cosmos
+    service: tendermint HTTP-RPC
+    location: body
+    key:
+    value: 'Available endpoints:'
