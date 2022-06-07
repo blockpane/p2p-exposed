@@ -24,12 +24,12 @@
 46657: tendermint rpc
 56657: tendermint rpc
 
-1317: cosmos rest
-2317: cosmos rest
-3317: cosmos rest
-4317: cosmos rest
-5317: cosmos rest
-10317: cosmos rest
+1317: cosmos rest & grpc gateway
+2317: cosmos rest & grpc gateway
+3317: cosmos rest & grpc gateway
+4317: cosmos rest & grpc gateway
+5317: cosmos rest & grpc gateway
+10317: cosmos rest & grpc gateway
 
 16660: cosmos prometheus
 26660: cosmos prometheus
@@ -39,19 +39,19 @@
 
 6060: tendermint pprof
 
-9090: tendermint grpc
-19090: tendermint grpc
-29090: tendermint grpc
-39090: tendermint grpc
-49090: tendermint grpc
-59090: tendermint grpc
+9090: cosmos grpc
+19090: cosmos grpc
+29090: cosmos grpc
+39090: cosmos grpc
+49090: cosmos grpc
+59090: cosmos grpc
 
-9091: tendermint grpc web
-19091: tendermint grpc web
-29091: tendermint grpc web
-39091: tendermint grpc web
-49091: tendermint grpc web
-59091: tendermint grpc web
+9091: cosmos grpc web
+19091: cosmos grpc web
+29091: cosmos grpc web
+39091: cosmos grpc web
+49091: cosmos grpc web
+59091: cosmos grpc web
 
 9100: prometheus node exporter
 22: ssh
