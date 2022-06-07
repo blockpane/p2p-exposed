@@ -33,6 +33,7 @@ func PortScan(address string) []byte {
 			}
 			if counter == 0 {
 				close(doneChan)
+				return
 			}
 
 		}
