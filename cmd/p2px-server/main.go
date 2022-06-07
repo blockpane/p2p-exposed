@@ -18,6 +18,8 @@ import (
  return the results.
 */
 
+const link = "https://github.com/blockpane/p2p-exposed"
+
 func main() {
 	var port int
 	var xForwarded string
@@ -74,6 +76,7 @@ func main() {
 			return
 		}
 
+		writer.Header().Set("X-Powered-By", link)
 		mux.Lock()
 		locked := wait[remoteIp] != nil && wait[remoteIp].After(time.Now())
 		mux.Unlock()
