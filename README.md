@@ -83,12 +83,13 @@ Scanning the following ports:
 -----------------------------------------
 
 a.b.c.d:80    - generic http
-a.b.c.d:443   - generic tls http
-a.b.c.d:1317  - cosmos rest
-a.b.c.d:9090  - tendermint grpc
-a.b.c.d:9091  - tendermint grpc web
+a.b.c.d:443   - tls http
+a.b.c.d:1317  - cosmos rest & grpc gateway
+a.b.c.d:9090  - cosmos grpc
+a.b.c.d:9091  - cosmos grpc web
 a.b.c.d:26656 - tendermint p2p
 a.b.c.d:26657 - tendermint rpc
 
 done: 7 open ports.
 ```
+
