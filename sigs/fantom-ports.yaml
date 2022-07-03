@@ -1,0 +1,43 @@
+80: generic http
+1080: generic http
+3000: generic http
+8080: generic http
+8088: generic http
+8887: generic http
+8888: generic http
+8889: generic http
+
+9100: generic prometheus node exporter
+22: generic ssh
+2222: generic alt ssh
+
+443: generic tls http
+8443: generic tls http
+
+5050: opera p2p
+15050: opera p2p
+25050: opera p2p
+35050: opera p2p
+45050: opera p2p
+55050: opera p2p
+
+7946: opera testnet p2p
+17946: opera testnet p2p
+27946: opera testnet p2p
+37946: opera testnet p2p
+47946: opera testnet p2p
+57946: opera testnet p2p
+
+8545: opera rpc http
+18545: opera rpc http
+28545: opera rpc http
+38545: opera rpc http
+48545: opera rpc http
+58545: opera rpc http
+
+8546: opera rpc ws
+18546: opera rpc ws
+28546: opera rpc ws
+38546: opera rpc ws
+48546: opera rpc ws
+58546: opera rpc ws

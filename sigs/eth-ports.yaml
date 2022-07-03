@@ -1,0 +1,36 @@
+80: generic http
+1080: generic http
+3000: generic http
+8080: generic http
+8088: generic http
+8887: generic http
+8888: generic http
+8889: generic http
+
+9100: generic prometheus node exporter
+22: generic ssh
+2222: generic alt ssh
+
+443: generic tls http
+8443: generic tls http
+
+10303: geth p2p
+20303: geth p2p
+30303: geth p2p
+40303: geth p2p
+50303: geth p2p
+60303: geth p2p
+
+8545: geth rpc http
+18545: geth rpc http
+28545: geth rpc http
+38545: geth rpc http
+48545: geth rpc http
+58545: geth rpc http
+
+8546: geth rpc ws
+18546: geth rpc ws
+28546: geth rpc ws
+38546: geth rpc ws
+48546: geth rpc ws
+58546: geth rpc ws

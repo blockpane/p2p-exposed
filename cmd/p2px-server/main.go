@@ -52,7 +52,15 @@ func main() {
 
 	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
 
-		if !strings.HasPrefix(request.URL.Path, "/cosmos") {
+		var chain string
+		switch {
+		case strings.HasPrefix(request.URL.Path, "/cosmos"):
+			chain = "cosmos"
+		case strings.HasPrefix(request.URL.Path, "/eth"):
+			chain = "eth"
+		case strings.HasPrefix(request.URL.Path, "/fantom"):
+			chain = "fantom"
+		default:
 			writer.WriteHeader(404)
 			writer.Write([]byte("not found\n"))
 			return
@@ -89,8 +97,8 @@ func main() {
 		mux.Lock()
 		wait[remoteIp] = &next
 		mux.Unlock()
-		log.Println(remoteIp, "requested a scan")
-		report := scan.PortScan(remoteIp)
+		log.Println(remoteIp, "requested a scan for", chain)
+		report := scan.PortScan(remoteIp, chain)
 		writer.Write(report)
 	})
 

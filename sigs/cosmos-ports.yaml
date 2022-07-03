@@ -1,5 +1,3 @@
----
-
 80: generic http
 1080: generic http
 3000: generic http
@@ -9,8 +7,12 @@
 8888: generic http
 8889: generic http
 
-443: tls http
-8443: tls http
+9100: generic prometheus node exporter
+22: generic ssh
+2222: generic alt ssh
+
+443: generic tls http
+8443: generic tls http
 
 16656: tendermint p2p
 26656: tendermint p2p
@@ -52,6 +54,3 @@
 39091: cosmos grpc web
 49091: cosmos grpc web
 59091: cosmos grpc web
-
-9100: prometheus node exporter
-22: ssh
