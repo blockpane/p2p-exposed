@@ -4,9 +4,11 @@ This is a simple web service for checking what blockchain ports are exposed to t
 
 ## Supported chains
 
-* Cosmos/Tendermint: use the '/cosmos' path
-* Ethereum: use the '/eth' path
-* Fantom: use the '/fantom' path
+| Chain             | Url                               |
+|-------------------|-----------------------------------|
+| Cosmos/Tendermint | `curl https://p2p.exposed/cosmos` |
+| Ethereum          | `curl https://p2p.exposed/eth`    |
+| Fantom            | `curl https://p2p.exposed/fantom` |
 
 ## How does it work?
 
