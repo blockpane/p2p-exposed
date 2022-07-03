@@ -97,7 +97,7 @@ func main() {
 		mux.Lock()
 		wait[remoteIp] = &next
 		mux.Unlock()
-		log.Println(remoteIp, "requested a scan")
+		log.Println(remoteIp, "requested a scan for", chain)
 		report := scan.PortScan(remoteIp, chain)
 		writer.Write(report)
 	})

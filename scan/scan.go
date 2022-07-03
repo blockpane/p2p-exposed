@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	p2px "github.com/blockpane/p2p-exposed"
 	"net"
 	"sort"
 	"sync"
@@ -23,19 +24,23 @@ func PortScan(address, chain string) []byte {
 	wg := &sync.WaitGroup{}
 
 	var ports map[uint32]string
+	var whatPorts []byte
 	switch chain {
 	case "cosmos":
 		cosmosMu.RLock()
 		defer cosmosMu.RUnlock()
 		ports = CosmosPortsMap
+		whatPorts = p2px.CosmosPorts
 	case "eth":
 		ethMu.RLock()
 		defer ethMu.RLock()
 		ports = EthPortsMap
+		whatPorts = p2px.EthPorts
 	case "fantom":
 		fantomMu.RLock()
 		defer fantomMu.RUnlock()
 		ports = FantomPortsMap
+		whatPorts = p2px.FantomPorts
 	default:
 		return nil
 	}
@@ -73,6 +78,9 @@ func PortScan(address, chain string) []byte {
 	})
 
 	buf := bytes.NewBuffer(nil)
+	buf.WriteString("Scanning the following ports:\n")
+	buf.Write(whatPorts)
+	buf.WriteString("-----------------------------------------\n\n")
 	for _, f := range finalResults {
 		buf.WriteString(fmt.Sprintf("%s:%-5d - %s\n", address, f.Port, ports[f.Port]))
 	}
