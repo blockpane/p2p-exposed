@@ -16,16 +16,36 @@ type result struct {
 }
 
 // PortScan accepts an IP/hostname and returns scan results.
-func PortScan(address string) []byte {
+func PortScan(address, chain string) []byte {
+
 	doneChan := make(chan interface{}, 1)
 	foundChan := make(chan result)
 	wg := &sync.WaitGroup{}
-	wg.Add(len(Ports))
+
+	var ports map[uint32]string
+	switch chain {
+	case "cosmos":
+		cosmosMu.RLock()
+		defer cosmosMu.RUnlock()
+		ports = CosmosPortsMap
+	case "eth":
+		ethMu.RLock()
+		defer ethMu.RLock()
+		ports = EthPortsMap
+	case "fantom":
+		fantomMu.RLock()
+		defer fantomMu.RUnlock()
+		ports = FantomPortsMap
+	default:
+		return nil
+	}
+
+	wg.Add(len(ports))
 
 	finalResults := make([]result, 0)
 
 	go func() {
-		counter := len(Ports)
+		counter := len(ports)
 		for f := range foundChan {
 			counter -= 1
 			if f.Open {
@@ -39,7 +59,7 @@ func PortScan(address string) []byte {
 		}
 	}()
 
-	for k := range Ports {
+	for k := range ports {
 		go openTcp(address, k, wg, foundChan)
 		time.Sleep(20 * time.Millisecond)
 	}
@@ -54,7 +74,7 @@ func PortScan(address string) []byte {
 
 	buf := bytes.NewBuffer(nil)
 	for _, f := range finalResults {
-		buf.WriteString(fmt.Sprintf("%s:%-5d - %s\n", address, f.Port, Ports[f.Port]))
+		buf.WriteString(fmt.Sprintf("%s:%-5d - %s\n", address, f.Port, ports[f.Port]))
 	}
 	buf.WriteString(fmt.Sprintf("\ndone: %d open ports.\n", len(finalResults)))
 

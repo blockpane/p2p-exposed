@@ -13,4 +13,10 @@ used Cosmos services that are available.
 // var Http []byte
 
 //go:embed sigs/cosmos-ports.yaml
-var Ports []byte
+var CosmosPorts []byte
+
+//go:embed sigs/fantom-ports.yaml
+var FantomPorts []byte
+
+//go:embed sigs/eth-ports.yaml
+var EthPorts []byte
